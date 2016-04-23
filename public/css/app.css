@@ -1,0 +1,59 @@
+datatables.min.css.username.ng-valid {
+    border-color: lightgreen;
+}
+.username.ng-dirty.ng-invalid-required {
+    border-color: red;
+}
+.username.ng-dirty.ng-invalid-minlength {
+    border-color: yellow;
+} 
+.email.ng-valid {
+    border-color: lightgreen;
+}
+.email.ng-dirty.ng-invalid-required {
+    border-color: red;
+}
+.email.ng-dirty.ng-invalid-email {
+    border-color: yellow;
+}
+.fecha.ng-valid {
+    border-color: lightgreen;
+}
+.fecha.ng-dirty.ng-invalid-required {
+    border-color: red;
+}
+.fecha.ng-dirty.ng-invalid-date {
+    border-color: yellow;
+}
+
+form{
+	margin: 30px;
+}
+
+select{
+	width: 100%;
+	height: 30px;
+	border-color: lightgrey;
+}
+
+input[type='checkbox'] {
+	width: 25px;
+}
+
+/** COLORS BOOTSTRAP **/
+
+.color-verd{
+	color: #5cb85c;
+}
+
+.color-blau{
+	color: #337ab7;
+}
+
+.color-vermell{
+	color: #d9534f;
+}
+
+.color-groc{
+	color: #f0ad4e;
+}
