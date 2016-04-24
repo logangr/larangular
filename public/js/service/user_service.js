@@ -5,7 +5,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
     return {
          
             fetchAllUsers: function() {
-                    return $http.get('http://localhost:8080/user/')
+                    return $http.get('user')
                             .then(
                                     function(response){
                                         return response.data;
@@ -18,7 +18,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
             },
             
             getAllMunicipis: function() {
-                return $http.get('http://localhost:8080/user/getMunicipis')
+                return $http.get('user/getMunicipis')
                         .then(
                                 function(response){
                                     return response.data;
@@ -31,7 +31,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
             },
              
             createUser: function(user){
-                    return $http.post('http://localhost:8080/user/', user)
+                    return $http.post('user/', user)
                             .then(
                                     function(response){
                                         return response.data;
@@ -44,7 +44,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
             },
              
             updateUser: function(user, id){
-                    return $http.put('http://localhost:8080/user/'+id, user)
+                    return $http.put('user/'+id, user)
                             .then(
                                     function(response){
                                         return response.data;
@@ -57,7 +57,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
             },
              
             deleteUser: function(id){
-                    return $http.delete('http://localhost:8080/user/'+id)
+                    return $http.delete('user/'+id)
                             .then(
                                     function(response){
                                         return response.data;

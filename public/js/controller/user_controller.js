@@ -7,7 +7,7 @@ App.directive('userInfo', function() {
         	u: '=info'
         },        
         replace: true,
-        templateUrl: '/directive/user'
+        templateUrl: 'scopes/user-info-iso.html'
 //        ,
 //        link: function(scope, elem, attrs) {
 //            elem.bind('keyup', function() {
@@ -37,7 +37,7 @@ App.directive('limitInput', function() {
         	$scope.type = $attrs.type;
         	$scope.estil = $attrs.estil;
         },
-        templateUrl: '/directive/limitInput'
+        templateUrl: 'scopes/limit-input.html'
     };
 });
 

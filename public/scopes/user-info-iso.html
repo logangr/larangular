@@ -1,0 +1,15 @@
+<div>
+<div class="col-md-2">{{u.username}}</div>
+<div class="col-md-2">{{u.address}}</div>
+<div class="col-md-2">{{u.email}}</div>
+<div class="col-md-2">{{u.fecha|date:'dd/MM/yyyy'}}</div>
+<div class="col-md-2">{{u.municipi.name}}</div>
+<div ng-switch on="u.actiu">
+    <div ng-switch-when="true" class="col-md-2">
+        <i class="fa fa-check color-verd"></i>
+    </div>
+    <div ng-switch-default class="col-md-2">
+        <i class="fa fa-close color-vermell"></i>
+    </div>
+</div>
+</div>

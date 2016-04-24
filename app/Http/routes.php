@@ -5,7 +5,9 @@ Route::get('/', function () {
     return view('UserManagement');
 });
 
-Route::get('/api/users/{id?}', 'UserRestController@index');
-Route::post('/api/users', 'UserRestController@store');
-Route::post('/api/users/{id}', 'UserRestController@update');
-Route::delete('/api/users/{id}', 'UserRestController@destroy');
+Route::get('/user', 'UserRestController@listAllUsers');
+Route::get('/user/{id}', 'UserRestController@getUser');
+Route::get('/user/getMunicipis', 'UserRestController@getAllMunicipis');
+
+Route::get('/directive/user', 'DirectivesController@user');
+Route::get('/directive/limitInput', 'DirectivesController@limitInput');
