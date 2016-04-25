@@ -17,7 +17,7 @@ class UserHelper {
         if (Session::has('users')) {
             $users = Session::get('users');
         } else {
-            for ($u = 1; $u < 20; $u ++) {
+            for ($u = 1; $u < 10; $u ++) {
                 $user = new UserCommand();
 
                 $user -> id = $u;
@@ -38,7 +38,7 @@ class UserHelper {
 
                 array_push($users, $user);
             }
-
+            Session::put('next_id', sizeof($users) + 1);
             Session::put('users',$users);
         }
 
@@ -54,5 +54,50 @@ class UserHelper {
             }
         }
         return $final_user;
+    }
+
+    public static function saveUser($pseudo_user) {
+        $user = new UserCommand();
+        $user -> username = $pseudo_user -> username;
+        $user -> address = $pseudo_user -> address;
+        $user -> email = $pseudo_user -> email;
+        $user -> fecha = $pseudo_user -> fecha;
+        $user -> municipi = SelectHelper::getMunicipiById($pseudo_user -> municipi -> id);
+        $user -> actiu = $pseudo_user -> actiu;
+
+        $users = UserHelper::getAllUsers();
+        $user -> id = UserHelper::getNextUsuariId();
+
+        array_push($users,$user);
+        Session::put('users', $users);
+    }
+
+    public static function updateUser($pseudo_user) {
+        $users = UserHelper::getAllUsers();
+        $found = false;
+
+        foreach ($users as &$user) {
+            if (!$found && $user -> id == $pseudo_user -> id) {
+                $user -> username = $pseudo_user -> username;
+                $user -> address = $pseudo_user -> address;
+                $user -> email = $pseudo_user -> email;
+                $user -> fecha = $pseudo_user -> fecha;
+                $user -> municipi = SelectHelper::getMunicipiById($pseudo_user -> municipi -> id);
+                $user -> actiu = $pseudo_user -> actiu;
+
+                $found = true;
+            }
+        }
+        Session::put('users', $users);
+    }
+
+    private static function getNextUsuariId() {
+        if (Session::has('next_id')) {
+            $actualId = Session::get('next_id');
+            Session::put('next_id', $actualId + 1);
+            return $actualId;
+        } else {
+            return 1;
+        }
     }
 }

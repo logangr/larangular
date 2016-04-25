@@ -31,12 +31,12 @@
 
                 <input type="hidden" ng-model="ctrl.user.id" />
 
-                <limit-input id="uname"
+                <!-- limit-input id="uname"
                              label="Nom *"
                              camp="ctrl.user.username"
                              placeholder="Introdueix el teu nom"
                              type="text"
-                             estil="username form-control input-sm"></limit-input>
+                             estil="username form-control input-sm"></limit-input -->
 
                 <div class="row">
                     <div class="form-group col-md-12">
@@ -163,7 +163,7 @@
         </div>
     </div>
 
-    <div class="panel panel-default">
+    <!-- div class="panel panel-default">
 
         <div class="panel-heading"><span class="lead">Llistat d'usuaris amb directiva</span></div>
 
@@ -172,7 +172,7 @@
                 <user-info info="u"></user-info>
             </div>
         </div>
-    </div>
+    </div-->
 
 </div>
 

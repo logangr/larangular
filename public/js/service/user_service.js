@@ -31,7 +31,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
             },
              
             createUser: function(user){
-                    return $http.post('user/', user)
+                    return $http.post('user', user)
                             .then(
                                     function(response){
                                         return response.data;

@@ -25,11 +25,8 @@ App.directive('limitInput', function() {
         restrict: 'E',
         scope: false, 
         replace: true,
-        controller: ['$scope', function($scope, $element, $attrs) {
-        	debugger;
-        }],
+        controller: ['$scope', function($scope, $element, $attrs) {}],
         link: function ($scope, $element, $attrs) {
-        	debugger;
         	$scope.id = $attrs.id;
         	$scope.label = $attrs.label;
         	$scope.camp = $attrs.camp;

@@ -6,5 +6,8 @@ Route::get('/', function () {
 });
 
 Route::get('/user', 'UserRestController@listAllUsers');
-Route::get('/user/{id}', 'UserRestController@getUser');
+Route::post('/user', 'UserRestController@createUser');
 Route::get('/user/getMunicipis', 'UserRestController@getAllMunicipis');
+Route::get('/user/{id}', 'UserRestController@getUser');
+Route::post('/user/{id}', 'UserRestController@updateUser');
+
