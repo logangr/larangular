@@ -24,8 +24,8 @@ class UserRestController extends Controller
         UserHelper::saveUser($pseudo_user);
     }
 
-    public function updateUser(Request $request, $id) {
-        $user = UserHelper::findById($id);
+    public function updateUser(Request $request, $idpost) {
+        $user = UserHelper::findById($idpost);
         if ($user != null) {
             $pseudo_user = json_decode($request->getContent());
             UserHelper::updateUser($pseudo_user);
