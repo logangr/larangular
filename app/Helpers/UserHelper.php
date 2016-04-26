@@ -91,6 +91,19 @@ class UserHelper {
         Session::put('users', $users);
     }
 
+    public static function deleteUserById($id) {
+        $users = UserHelper::getAllUsers();
+        $found = false;
+
+        for ($u=0; ($u<sizeof($users) && !$found); $u++) {
+            if (array_key_exists($u,$users) && $users[$u] -> id == $id) {
+                array_splice($users,$u,1);
+                $found = true;
+            }
+        }
+        Session::put('users', $users);
+    }
+
     private static function getNextUsuariId() {
         if (Session::has('next_id')) {
             $actualId = Session::get('next_id');
